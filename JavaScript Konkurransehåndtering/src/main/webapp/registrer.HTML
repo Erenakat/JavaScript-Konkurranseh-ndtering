@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="main-styles.css">
+</head>
+
+<body>
+    <div id="root" class="container-wrapper">
+        <!-- Container for registrering -->
+        <div class="container" id="registreringContainer">
+            <h3>Registrer deltager</h3>
+            <form class="registrering">
+                <input type="text" id="regInput" placeholder="Fyll inn data for deltager"
+                    style="margin-bottom: 5px;"><br>
+                <button type="button" id="regButton" class="blockButton">Registrer deltager</button>
+            </form>
+            <p class="statistikk">Beste tid til nå er: <span id="bestTid">Ikke satt</span>
+        </div>
+        <!-- Container for finnDeltager -->
+        <div class="container" id="finnDeltager">
+            <h3>Finn deltager</h3>
+            <form class="deltager">
+                <input type="number" id="finnDeltagerInput" placeholder="Skriv inn startnummer" min="1" max="999"
+                    style="margin-bottom: 5px;"><br>
+                <button type="button" id="finnDeltagerButton" class="blockButton">Finn deltager</button>
+            </form>
+            <div>
+                <p id="startnummerDisplay" class="hidden">Startnummer: <span></span></p>
+                <p id="navnDisplay" class="hidden">Navn <span></span></p>
+                <p id="tidDisplay" class="hidden">Tid: <span></span></p>
+            </div>
+            <p id="errorDisplay" style="color:red;"></p>
+        </div>
+        <!-- Container for statistikk -->
+        <div class=container id="statistikk">
+            <h3>Statistikk</h3>
+            <label for="fra">Fra:
+                <input type="text" id="fraTidInput" name="fra" placeholder="HH:MM:SS" class="inputStatistikk"
+                    pattern="^(?:[01]\d|2[0-3]):(?:[0-5]\d):(?:[0-5]\d)$">
+            </label>
+            <label for="til">Til:
+                <input type="text" id="tilTidInput" name="til" placeholder="HH:MM:SS" class="inputStatistikk"
+                    pattern="^(?:[01]\d|2[0-3]):(?:[0-5]\d):(?:[0-5]\d)$">
+            </label>
+            <button type="button" id="finnAntallButton" class="blockButton">Finn antall</button>
+            <p id="antallResultat"></p>
+
+            <script src="./javascript/deltager.js"></script>
+        </div>
+</body>
+
+</html>
+
